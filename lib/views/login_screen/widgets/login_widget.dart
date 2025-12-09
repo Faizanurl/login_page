@@ -4,22 +4,26 @@ import 'package:login_page/components/confirm_button.dart';
 import 'package:login_page/components/group1_icon_image.dart';
 import 'package:login_page/components/group_icon_image.dart';
 import 'package:login_page/components/mobile_gradient.dart';
+import 'package:login_page/components/simple_textfield.dart';
 import 'package:login_page/components/textfield.dart';
 import 'package:login_page/components/triangle_icon.dart';
 import 'package:login_page/utils/app_color.dart';
 import 'package:login_page/utils/app_images.dart';
 import 'package:login_page/utils/app_text.dart';
 import 'package:login_page/utils/appstyle.dart';
-import 'package:login_page/viewmodel/login_view_model.dart';
 import 'package:login_page/components/tablet_gradient.dart';
 import 'package:login_page/views/login_screen/widgets/login_footers.dart';
 import 'package:login_page/views/login_screen/widgets/social_links.dart';
 import 'package:login_page/views/register_screen/register_screen.dart';
-import 'package:provider/provider.dart';
 
-class LoginWidget extends StatelessWidget {
-  const LoginWidget({super.key});
+class LoginWidget extends StatefulWidget {
+   LoginWidget({super.key});
 
+  @override
+  State<LoginWidget> createState() => _LoginWidgetState();
+}
+ bool ischecked=false;
+class _LoginWidgetState extends State<LoginWidget> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -44,8 +48,7 @@ class LoginWidget extends StatelessWidget {
             Text(AppText.weareexiting, style: Appstyle().light()),
             Text(AppText.youraccount, style: Appstyle().light()),
             spaceheigth,
-
-            CustomTextfields(label: AppText.usernameoremail, eye: false),
+SimpleTextfield(label: AppText.usernameoremail,),
             spaceheigth,
             CustomTextfields(label: AppText.password, eye: true),
 
@@ -53,9 +56,11 @@ class LoginWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Checkbox(
-                  value: context.read<LoginViewModel>().check,
+                  value: ischecked, focusColor: AppColor.darkblue,
                   onChanged: (value) {
-                    Icon(Icons.check, color: AppColor.white);
+                 setState(() {
+                   ischecked=value!;
+                 });
                   },
                 ),
                 Text(AppText.rememberme, style: Appstyle().light()),

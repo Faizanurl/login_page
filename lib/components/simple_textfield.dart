@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:login_page/utils/app_color.dart';
 import 'package:login_page/utils/appstyle.dart';
 
-class CustomTextfields extends StatefulWidget {
+class SimpleTextfield extends StatefulWidget {
   final String label;
-  final bool eye;
-  const CustomTextfields({super.key,required this.label,required this.eye});
+  const SimpleTextfield({super.key,required this.label,});
 
   @override
-  State<CustomTextfields> createState() => _CustomTextfieldsState();
+  State<SimpleTextfield> createState() => _CustomTextfieldsState();
 }
 
-class _CustomTextfieldsState extends State<CustomTextfields> {
+class _CustomTextfieldsState extends State<SimpleTextfield> {
   bool obsessedtext=false;
   @override
   Widget build(BuildContext context) {
@@ -23,20 +22,11 @@ class _CustomTextfieldsState extends State<CustomTextfields> {
 
       
       child: TextField(
-        obscureText: obsessedtext,
         style: TextStyle(color: AppColor.white),
         cursorColor: AppColor.white,
       
         decoration: InputDecoration(  
           
-           suffixIcon: InkWell(
-            onTap: () {
-              setState(() {
-                obsessedtext=!obsessedtext;
-              });
-            },
-            child:widget.eye==true? Icon( obsessedtext? Icons.visibility:Icons.visibility_off):null),
-            // widget.eye==true ? Icon(Iconsax.eye_slash,color: AppColor.white,size: size.height*0.020,): null,
           
           contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
           label: Text(widget.label,style: Appstyle().light(),),

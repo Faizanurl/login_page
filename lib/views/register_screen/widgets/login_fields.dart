@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_page/components/simple_textfield.dart';
 import 'package:login_page/components/textfield.dart';
 import 'package:login_page/utils/app_text.dart';
 
@@ -11,10 +12,10 @@ class LoginFields extends StatelessWidget {
     var spaceheigth = SizedBox(height: size.height * 0.025);
     return Column(children: [
       
-            CustomTextfields(label: AppText.usernameoremail, eye: false),
+            SimpleTextfield(label: AppText.usernameoremail,),
             spaceheigth,
 
-            CustomTextfields(label: AppText.emailaddress, eye: false),
+            SimpleTextfield(label: AppText.emailaddress, ),
             spaceheigth,
 
             CustomTextfields(label: AppText.password, eye: true),
