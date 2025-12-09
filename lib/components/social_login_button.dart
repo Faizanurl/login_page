@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/utils/app_color.dart';
 
-class Contain extends StatelessWidget {
-  var imge;
-  Contain({super.key, required this.imge});
+class SocialLoginButton extends StatelessWidget {
+ final String imge;
+  const SocialLoginButton ({super.key, required this.imge});
 
   @override
   Widget build(BuildContext context) {

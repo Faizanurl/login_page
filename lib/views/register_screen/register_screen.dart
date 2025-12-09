@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/utils/app_color.dart';
-import 'package:login_page/views/register_screen/widgets/register_components.dart';
+import 'package:login_page/views/register_screen/widgets/register_widget.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -16,7 +16,7 @@ class RegisterScreen extends StatelessWidget {
         height: size.height,
         width: size.width,
         decoration: BoxDecoration(),
-        child:  RegisterComponents()
+        child:  RegisterWidget()
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/utils/app_color.dart';
-import 'package:login_page/views/create_new_password/widgets/create_password_components.dart';
+import 'package:login_page/views/create_new_password/widgets/create_password_widget.dart';
 
 class CreateNewPassword extends StatelessWidget {
   const CreateNewPassword ({super.key});
@@ -16,7 +16,7 @@ class CreateNewPassword extends StatelessWidget {
         height: size.height,
         width: size.width,
         decoration: BoxDecoration(),
-        child:  CreatePasswordComponents()
+        child:  CreatePasswordWidget()
       ),
     );
   }

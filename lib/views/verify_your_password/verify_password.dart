@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/utils/app_color.dart';
-import 'package:login_page/views/verify_your_password/widget/verify_password_components.dart';
+import 'package:login_page/views/verify_your_password/widget/verify_password_widget.dart';
 class VerifyPassword extends StatelessWidget {
   const VerifyPassword({super.key});
 
@@ -8,6 +8,6 @@ class VerifyPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.black,
-      body:VerifyPasswordComponents() ,);
+      body:VerifyPasswordWidget() ,);
   }
 }

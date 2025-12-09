@@ -5,12 +5,13 @@ import 'package:login_page/utils/appstyle.dart';
 
 class CustomTextfields extends StatelessWidget {
   final String label;
-  bool eye ;
-   CustomTextfields({super.key,required this.label,required this.eye});
+  final bool eye;
+  const CustomTextfields({super.key,required this.label,required this.eye});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    // ignore: sized_box_for_whitespace
     return size.width>600? Container(
       width: size.width * 0.35,
       height: size.height * 0.055,
@@ -38,6 +39,7 @@ class CustomTextfields extends StatelessWidget {
       ),
     ):
 
+     // ignore: sized_box_for_whitespace
      Container(
       width: size.width * 0.9,
       height: size.height * 0.06,

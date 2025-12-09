@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/utils/app_color.dart';
-import 'package:login_page/views/login_screen/widgets/login_components.dart';
+import 'package:login_page/views/login_screen/widgets/login_widget.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -12,11 +12,10 @@ class LoginScreen extends StatelessWidget {
     
     return Scaffold(
       backgroundColor: AppColor.black,
-      body: Container(
+      body: SizedBox(
         height: size.height,
         width: size.width,
-        decoration: BoxDecoration(),
-        child:  LoginComponents()
+        child:  LoginWidget()
       ),
     );
   }

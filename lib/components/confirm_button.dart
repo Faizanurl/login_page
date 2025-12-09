@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/utils/app_color.dart';
 import 'package:login_page/utils/appstyle.dart';
-class Button extends StatelessWidget {
-  var text ;
-   Button({super.key,required this.text});
+class ConfirmButton extends StatelessWidget {
+  final String text;
+  const ConfirmButton({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

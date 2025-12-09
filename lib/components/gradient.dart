@@ -11,7 +11,9 @@ class GradientImage extends StatelessWidget {
               top: 0,
               right:  -200,
                
-              child: Container(
+              child: 
+              // ignore: sized_box_for_whitespace
+              Container(
                 height: size.height*0.7,
                 child: Image.asset(AppImages.gradient1,filterQuality: FilterQuality.high,)))
                 : SizedBox(),
