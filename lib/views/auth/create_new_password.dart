@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_page/utils/app_color.dart';
 import 'package:login_page/components/confirm_button.dart';
 import 'package:login_page/components/circle_icon.dart';
 import 'package:login_page/components/group1_icon_image.dart';
@@ -7,22 +8,29 @@ import 'package:login_page/components/custom_textfield.dart';
 import 'package:login_page/components/triangle_icon.dart';
 import 'package:login_page/utils/app_text.dart';
 import 'package:login_page/utils/appstyle.dart';
-import 'package:login_page/components/mobile_gradient.dart';
-import 'package:login_page/views/create_new_password/widgets/mobile_password_text.dart';
-import 'package:login_page/views/create_new_password/widgets/tablet_create_gradient.dart';
-import 'package:login_page/views/create_new_password/widgets/tablet_password_text.dart';
-import 'package:login_page/views/login_screen/login_screen.dart';
+import 'package:login_page/utils/bg_gradient.dart';
+import 'package:login_page/views/auth/widgets/mobile_password_text.dart';
+import 'package:login_page/views/auth/widgets/tablet_password_text.dart';
+import 'package:login_page/views/auth/login_screen.dart';
 
-class CreatePasswordWidget extends StatelessWidget {
-  const CreatePasswordWidget({super.key});
+class CreateNewPassword extends StatelessWidget {
+  const CreateNewPassword ({super.key});
 
   @override
   Widget build(BuildContext context) {
+    
     Size size = MediaQuery.of(context).size;
     var spaceheigth = SizedBox(height: size.height * 0.025);
-    return Stack(
+    
+    return Scaffold(
+      backgroundColor: AppColor.black,
+      body: Container(
+        height: size.height,
+        width: size.width,
+        decoration: BoxDecoration(),
+        child:  Stack(
       children: [
-        size.width > 500 ? TabletCreateGradient() : MobileGradient(),
+        BgGradient().backgroundgradient(context),
         CircleIcon(),
         TriangleIcon(),
         GroupIconImage(),
@@ -72,6 +80,8 @@ class CreatePasswordWidget extends StatelessWidget {
           ),
         ),
       ],
+    ),
+      ),
     );
   }
 }

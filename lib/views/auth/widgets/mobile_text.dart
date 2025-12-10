@@ -18,14 +18,16 @@ class MobileText extends StatelessWidget {
                           spaceheigth,
                         ],
                       ),
-                      Row(
-                        children: [
-                          spacewidth,
-                          Text(
-                            AppText.readytobecome,
-                            style: Appstyle().light(),
-                          ),
-                        ],
+                      SingleChildScrollView(
+                        child: Row(
+                          children: [
+                            spacewidth,
+                            Text(
+                              AppText.readytobecome,
+                              style: Appstyle().light(),
+                            ),
+                          ],
+                        ),
                       ),
                       Row(
                         children: [

@@ -1,32 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:login_page/utils/app_color.dart';
 import 'package:login_page/components/circle_icon.dart';
 import 'package:login_page/components/confirm_button.dart';
 import 'package:login_page/components/group1_icon_image.dart';
 import 'package:login_page/components/group_icon_image.dart';
-import 'package:login_page/components/mobile_gradient.dart';
 import 'package:login_page/components/social_login_button.dart';
 import 'package:login_page/components/triangle_icon.dart';
 import 'package:login_page/utils/app_images.dart';
 import 'package:login_page/utils/app_text.dart';
-import 'package:login_page/views/register_screen/widgets/costom_spacer.dart';
-import 'package:login_page/views/register_screen/widgets/login_fields.dart';
-import 'package:login_page/views/register_screen/widgets/register_footer.dart';
-import 'package:login_page/views/register_screen/widgets/tablet_gradient_register.dart';
-import 'package:login_page/views/register_screen/widgets/mobile_text.dart';
-import 'package:login_page/views/register_screen/widgets/tablet_text.dart';
-import 'package:login_page/views/reset_password/reset_password.dart';
+import 'package:login_page/utils/bg_gradient.dart';
+import 'package:login_page/views/auth/login_screen.dart';
+import 'package:login_page/views/auth/widgets/background_gradient.dart';
+import 'package:login_page/views/auth/widgets/costom_spacer.dart';
+import 'package:login_page/views/auth/widgets/login_fields.dart';
+import 'package:login_page/views/auth/widgets/auth_footers.dart';
+import 'package:login_page/views/auth/widgets/mobile_text.dart';
+import 'package:login_page/views/auth/reset_password.dart';
+import 'package:login_page/views/auth/widgets/tablet_text.dart';
 
-class RegisterWidget extends StatelessWidget {
-  const RegisterWidget({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     var spacewidth = SizedBox(width: size.width * 0.04);
     var spaceheigth = SizedBox(height: size.height * 0.025);
-    return Stack(
+    
+    return Scaffold(
+      backgroundColor: AppColor.black,
+      body: Container(
+        height: size.height,
+        width: size.width,
+        decoration: BoxDecoration(),
+        child:  
+        Stack(
       children: [
-        size.width > 500 ? TabletGradientRegister() : MobileGradient(),
+      BackgroundGradient(BG: BgGradient().background2gradient(context)),
         CircleIcon(),
         TriangleIcon(),
         GroupIconImage(),
@@ -64,10 +74,13 @@ class RegisterWidget extends StatelessWidget {
               ],
             ),
             SizedBox(height: size.height * 0.12),
-            RegisterFooter(),
+           AuthFooters(text: AppText.login,navigator: LoginScreen(),)
           ],
         ),
       ],
+    )
+
+      ),
     );
   }
 }

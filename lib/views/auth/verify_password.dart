@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:login_page/utils/app_color.dart';
 import 'package:login_page/components/circle_icon.dart';
 import 'package:login_page/components/confirm_button.dart';
 import 'package:login_page/components/group1_icon_image.dart';
 import 'package:login_page/components/group_icon_image.dart';
-import 'package:login_page/components/mobile_gradient.dart';
 import 'package:login_page/components/triangle_icon.dart';
 import 'package:login_page/utils/app_text.dart';
 import 'package:login_page/utils/appstyle.dart';
-import 'package:login_page/views/create_new_password/create_new_password.dart';
-import 'package:login_page/views/verify_your_password/widget/otp.dart';
-import 'package:login_page/views/verify_your_password/widget/tablet_verify_gradient.dart';
-
-class VerifyPasswordWidget extends StatelessWidget {
-  const VerifyPasswordWidget({super.key});
+import 'package:login_page/utils/bg_gradient.dart';
+import 'package:login_page/views/auth/create_new_password.dart';
+import 'package:login_page/views/auth/widgets/background_gradient.dart';
+import 'package:login_page/views/auth/widgets/otp.dart';
+class VerifyPassword extends StatelessWidget {
+  const VerifyPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
+    
     Size size = MediaQuery.of(context).size;
-    return Stack(
+    return Scaffold(
+      backgroundColor: AppColor.black,
+      body:   
+       Stack(
       children: [
-        size.width > 500 ? TabletVerifyGradient() : MobileGradient(),
+      BackgroundGradient(BG: BgGradient().backround4gradient(context)),
         CircleIcon(),
         TriangleIcon(),
         GroupIconImage(),
@@ -52,6 +56,8 @@ class VerifyPasswordWidget extends StatelessWidget {
           ),
         ),
       ],
-    );
+    )
+      
+      );
   }
 }

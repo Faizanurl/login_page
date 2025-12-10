@@ -1,26 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:login_page/utils/app_color.dart';
 import 'package:login_page/components/circle_icon.dart';
 import 'package:login_page/components/confirm_button.dart';
 import 'package:login_page/components/group1_icon_image.dart';
 import 'package:login_page/components/group_icon_image.dart';
-import 'package:login_page/components/mobile_gradient.dart';
 import 'package:login_page/components/simple_textfield.dart';
 import 'package:login_page/components/triangle_icon.dart';
 import 'package:login_page/utils/app_text.dart';
 import 'package:login_page/utils/appstyle.dart';
-import 'package:login_page/views/reset_password/widget/tablet_reset_gradient.dart';
-import 'package:login_page/views/verify_your_password/verify_password.dart';
-
-class ResetPasswordWidget extends StatelessWidget {
-  const ResetPasswordWidget({super.key});
+import 'package:login_page/utils/bg_gradient.dart';
+import 'package:login_page/views/auth/verify_password.dart';
+import 'package:login_page/views/auth/widgets/background_gradient.dart';
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     var spaceheigth = SizedBox(height: size.height * 0.04);
-    return Stack(
+
+    return Scaffold(
+      backgroundColor: AppColor.black,
+      body: 
+     Container(
+        height: size.height,
+        width: size.width,
+        decoration: BoxDecoration(),
+        child: 
+        Stack(
       children: [
-        size.width > 500 ? TabletResetGradient() : MobileGradient(),
+        BackgroundGradient(BG: BgGradient().background3gradient(context)),
         CircleIcon(),
         TriangleIcon(),
         GroupIconImage(),
@@ -54,6 +63,8 @@ class ResetPasswordWidget extends StatelessWidget {
           ),
         ),
       ],
-    );
+    )
+
+      ),);
   }
 }

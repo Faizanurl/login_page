@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/utils/app_text.dart';
 import 'package:login_page/utils/appstyle.dart';
-import 'package:login_page/views/register_screen/register_screen.dart';
 
-class LoginFooters extends StatelessWidget {
-  const LoginFooters({super.key});
+// ignore: must_be_immutable
+class AuthFooters extends StatelessWidget {
+  var text;
+  var navigator;
+   AuthFooters({super.key,required this.text,required this.navigator});
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +21,10 @@ class LoginFooters extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => RegisterScreen()),
+                    MaterialPageRoute(builder: (_) =>navigator ),
                   );
                 },
-                child: Text(AppText.register, style: Appstyle().light()),
+                child: Text(text, style: Appstyle().light()),
               ),
             ],
           )
@@ -34,10 +36,10 @@ class LoginFooters extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => RegisterScreen()),
+                    MaterialPageRoute(builder: (_) => navigator),
                   );
                 },
-                child: Text(AppText.register, style: Appstyle().light()),
+                child: Text(text, style: Appstyle().light()),
               ),
               Spacer(),
               Text(AppText.contactsupport, style: Appstyle().light()),
