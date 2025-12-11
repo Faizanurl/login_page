@@ -10,7 +10,7 @@ import 'package:login_page/views/auth/verify_password.dart';
 
 class MyAppRouter {
 
-GoRouter router=  GoRouter(
+static final  GoRouter router=  GoRouter(
    routes: [
     GoRoute(
   name: AppRoutersName.loginroutename,

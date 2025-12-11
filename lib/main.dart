@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
   ],    child: MaterialApp.router(
     
           debugShowCheckedModeBanner: false,
-          routeInformationParser: MyAppRouter().router.routeInformationParser,
-          routerDelegate:MyAppRouter().router.routerDelegate ,
+          routeInformationParser: MyAppRouter.router.routeInformationParser,
+          routerDelegate:MyAppRouter.router.routerDelegate ,
 
 
       
