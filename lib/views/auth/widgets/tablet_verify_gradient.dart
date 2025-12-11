@@ -7,13 +7,18 @@ class TabletVerifyGradient extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Positioned(
-    right:-400,
-      bottom: 0,
-      child: SizedBox(
-        width: size.width,
-        child: Image.asset(AppImages.gradient5, fit: BoxFit.fill),
-      ),
+    return Row(mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Positioned(
+        right:-400,
+          bottom: 0,
+          child: SizedBox(
+            width: size.width,
+            height: size.height,
+            child: Image.asset(AppImages.gradient5, fit: BoxFit.fill),
+          ),
+        ),
+      ],
     );
   }
 }
