@@ -9,7 +9,7 @@ class Group1IconImage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Positioned(
-          bottom: 25,
+          bottom:size.width>500? 25:0,
           left: 5,
           child: SizedBox(
             height: size.height * 0.15,

@@ -9,7 +9,7 @@ class SocialLinks extends StatelessWidget {
   Widget build(BuildContext context) {
     
     Size size = MediaQuery.of(context).size;
-    var spacewidth = SizedBox(width: size.width * 0.02);
+    var spacewidth = SizedBox(width: size.width * 0.032);
     return  Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

@@ -7,7 +7,7 @@ class MobilePasswordText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return  Column(mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
                         AppText.typeyournewstrongpassword,

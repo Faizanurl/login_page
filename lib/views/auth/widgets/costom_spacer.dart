@@ -14,15 +14,37 @@ class CostomSpacer extends StatelessWidget {
               children: [
                 Container(
                   height: 1,
-                  width: size.width > 50 ? size.width * 0.17: size.width * 0.35,
+                  width: size.width>1200?
+   size.width*0.185 :
+    size.width > 1024
+        ? size.width * 0.205
+        : size.width > 700
+        ? size.width * 0.28
+        
+        : size.width > 600
+        ? size.width * 0.33
+        :size.width>500?
+        size.width*0.37
+        : size.width * 0.4,
                   color: AppColor.grey,
                 ),
-                SizedBox(width: 2),
+                SizedBox(width: size.width*0.012),
                 Text(AppText.or, style: Appstyle().light()),
-                SizedBox(width: 2),
+                SizedBox(width:size.width*0.012),
                 Container(
                   height: 1,
-                  width: size.width > 500? size.width * 0.17: size.width * 0.35,
+                  width: size.width>1200?
+   size.width*0.185 :
+    size.width > 1024
+        ? size.width * 0.205
+        : size.width > 700
+        ? size.width * 0.28
+        
+        : size.width > 600
+        ? size.width * 0.33
+        :size.width>500?
+        size.width*0.37
+        : size.width * 0.4,
 
                   color: AppColor.grey,
                 ),

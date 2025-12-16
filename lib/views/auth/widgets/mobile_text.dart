@@ -14,7 +14,7 @@ class MobileText extends StatelessWidget {
                       Row(
                         children: [
                           spacewidth,
-                          Text(AppText.register, style: Appstyle().bold()),
+                          Text(AppText.register, style: Appstyle().bold(context)),
                           spaceheigth,
                         ],
                       ),

@@ -33,7 +33,7 @@ StatelessWidget background3gradient(context){
  return size.width > 500 ? TabletResetGradient() : MobileGradient();
 }
 // ignore: strict_top_level_inference
-StatelessWidget backround4gradient(context){
+StatelessWidget background4gradient(context){
     Size size = MediaQuery.of(context).size;
   return size.width > 500 ? TabletVerifyGradient() : MobileGradient();
 }

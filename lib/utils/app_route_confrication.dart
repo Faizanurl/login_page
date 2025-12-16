@@ -43,7 +43,7 @@ static final  GoRouter router=  GoRouter(
   
   ), GoRoute(
   name:AppRoutersName.verifypasswordroutename,
-  path: "/verify password",
+  path: "/verifypassword",
   pageBuilder: (context, state) {
     return MaterialPage(child: VerifyPassword() );
   },

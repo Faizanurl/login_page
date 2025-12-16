@@ -6,6 +6,13 @@ class TabletGradientRegister extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(child: Image.asset(AppImages.gradient2, fit: BoxFit.fill));
+    Size size = MediaQuery.of(context).size;
+    return Positioned(
+     
+      left:  0,
+      child: SizedBox(
+        height: size.width>1024?size.height:   size.height*0.8,
+        child: Image.asset(AppImages.gradient2, fit: BoxFit.fill)),
+    );
   }
 }

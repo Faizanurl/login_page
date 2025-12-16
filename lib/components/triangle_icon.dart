@@ -8,11 +8,15 @@ class TriangleIcon extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return  Positioned(
-          left:size.width>450? 35:45,
-          top: size.height * 0.03,
+          left:size.width<500? 50:size.width<1024?   60:50,
+          top: size.height * 0.05,
           child: SizedBox(
             height: size.height * 0.02,
-            child: Image.asset(AppImages.polygon),
+            child: InkWell(
+              onTap: () {
+           Navigator.maybePop(context);
+              },
+              child: Image.asset(AppImages.polygon)),
           ),
         );
   }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:login_page/utils/app_text.dart';
 import 'package:login_page/utils/appstyle.dart';
 
-// ignore: must_be_immutable
 class AuthFooters extends StatelessWidget {
-  var text;
-  var navigator;
-   AuthFooters({super.key,required this.text,required this.navigator});
+  final String text;
+ final String navigator;
+   const AuthFooters({super.key,required this.text,required this.navigator});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class AuthFooters extends StatelessWidget {
               Text(AppText.donthave, style: Appstyle().light1()),
               InkWell(
                 onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (_)=>navigator));
+                                  context.pushNamed(navigator);
 
                 },
                 child: Text(text, style: Appstyle().light()),
@@ -33,10 +33,7 @@ class AuthFooters extends StatelessWidget {
               Text(AppText.donthave, style: Appstyle().light1()),
               InkWell(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (_) => navigator),
-                  );
+                  context.pushNamed(navigator);
                 },
                 child: Text(text, style: Appstyle().light()),
               ),

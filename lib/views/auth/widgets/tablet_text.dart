@@ -11,7 +11,7 @@ class TabletText extends StatelessWidget {
 
     return Column(
                     children: [
-                      Text(AppText.register, style: Appstyle().bold()),
+                      Text(AppText.register, style: Appstyle().bold(context)),
                       spaceheigth,
                       Text(AppText.readytobecome, style: Appstyle().light()),
                       Text(

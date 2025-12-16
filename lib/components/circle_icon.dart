@@ -8,10 +8,14 @@ class CircleIcon extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return  Positioned(
           left: 20,
-          top: size.height * 0.03,
+          top: size.height * 0.05,
           child: SizedBox(
             height: size.height * 0.02,
-            child: Image.asset(AppImages.circle),
+            child: InkWell(
+             onTap: () {
+  Navigator.maybePop(context);
+},
+              child: Image.asset(AppImages.circle)),
           ),
         );
   }

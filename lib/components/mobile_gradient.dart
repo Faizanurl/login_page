@@ -8,8 +8,8 @@ class MobileGradient extends StatelessWidget {
     return Positioned(
                 right: 0,
                 top: 20,
-                // ignore: avoid_unnecessary_containers
-                child: Container(
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height,
                   child: Image.asset(AppImages.gradient6, fit: BoxFit.fill),
                 ),
               );

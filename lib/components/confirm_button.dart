@@ -9,10 +9,10 @@ class ConfirmButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return
-     size.width>600?
+    
      Container(
-            width: size.width * 0.35,
-      height: size.height * 0.060,
+              width: _getWidth(size),
+      height: _getHeight(size),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         gradient: LinearGradient(colors:  [
@@ -20,19 +20,51 @@ class ConfirmButton extends StatelessWidget {
 
         ] ),
       ),
-      child: Center(child: Text(text,style: Appstyle().bold1(),)),
-    ):
-     Container(
-            width: size.width * 0.9,
-      height: size.height * 0.060,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5),
-        gradient: LinearGradient(colors:  [
-          AppColor.pink,AppColor.blue
-
-        ] ),
-      ),
-      child: Center(child: Text(text,style: Appstyle().bold1(),)),
+      child: Center(child: Text(text,style: Appstyle().bold1(context),)),
     );
   }
+
+
+
+   double _getWidth(Size size) {
+    if (size.width < 600) {
+      // Mobile
+      return size.width * 0.85;
+    }
+    
+    
+     else if (size.width < 768) {
+      // Small tablet
+      return size.width * 0.7;
+    } else if (size.width < 1024) {
+      // Tablet
+      return size.width * 0.6;
+    } else if (size.width < 1440) {
+      // Laptop
+      return size.width * 0.45;
+    } else {
+      // Desktop
+      return size.width * 0.4;
+    }
+  }
+
+  double _getHeight(Size size) {
+    if (size.width < 400) {
+      // Mobile
+      return size.height * 0.06;
+    }else if (size.width < 600) {
+      // large laptop
+      return size.height * 0.04;
+    }
+    else if (size.width > size.height){
+      return size.height*0.08;
+    } else if (size.width < 1024) {
+      // Tablet
+      return size.height * 0.05;
+    } else {
+      // Laptop/Desktop
+      return size.height * 0.06;
+    }
+  }
+
 }

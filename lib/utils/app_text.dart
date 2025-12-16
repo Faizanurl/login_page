@@ -6,7 +6,7 @@ class AppText {
   static const password = "Password"; 
   static const emailaddress = "Email Address";
   static const resetpassword = "Reset Password"; 
-static const typeyourauthorisedemailaddresstoreceiveresetpasswordlink="Type your authorised email address to receive reset password link.";
+static const typeyourauthorisedemailaddresstoreceiveresetpasswordlink="Type your authorised email address to receive reset";
   static const passwordlink = "Password link"; 
   static const resetpasswordlink="Reset Password link";
 static const createnewpassword="Create new password";
@@ -31,6 +31,10 @@ static const  belowandletthejourneybegin="the details below, and let the journey
   static const confirmchanges="Confirm Changes ";
   static const verifyyourcode="Verify Your Code";
   static const enterthepasscodeyoujust="Enter the passcode you just received on your email address ";
+  static const enterthepass="Enter the passcode you just received on ";
+  static const youremailaddress ="your email address ";
+  static const enteryourpassword="Enter Your Password";
+
 static const endingwithgmailcom ="ending with ********in@gmail.com";
 
 static const verify = "Verify";

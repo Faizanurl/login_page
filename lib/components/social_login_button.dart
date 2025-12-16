@@ -10,26 +10,35 @@ class SocialLoginButton extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return 
-    size.width>600?
-     Container(padding: EdgeInsets.symmetric(vertical: 5),
-      height: size.height * 0.05,
-      width: size.width * 0.08,
+    size.width<500?
+     Container(padding:size.width>400? EdgeInsets.all(4):EdgeInsets.all(6),
+      height: size.height * 0.047,
+      width: size.width * 0.25,
       decoration: BoxDecoration(
         border: Border.all(color: AppColor.grey, width: 1),
         borderRadius: BorderRadius.circular(2)
       ),
     
       child: Image.asset(imge),
-    ):
-    Container(padding: EdgeInsets.symmetric(vertical: 5),
+    ):size.width<1024?  Container(padding: EdgeInsets.all(5),
       height: size.height * 0.05,
-      width: size.width * 0.2,
+      width: size.width * 0.18,
       decoration: BoxDecoration(
         border: Border.all(color: AppColor.grey, width: 1),
         borderRadius: BorderRadius.circular(2)
       ),
     
       child: Image.asset(imge),
-    );
+    )    :
+    Container(padding: EdgeInsets.symmetric(vertical: 7),
+      height: size.height * 0.06,
+      width: size.width * 0.12,
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColor.grey, width: 1),
+        borderRadius: BorderRadius.circular(2)
+      ),
+    
+      child: Image.asset(imge),
+    )     ;
   }
 }
